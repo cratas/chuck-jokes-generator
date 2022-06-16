@@ -1,0 +1,1 @@
+export const ROOT_API_URL = 'https://api.chucknorris.io/jokes';

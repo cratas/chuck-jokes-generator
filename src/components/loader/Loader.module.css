@@ -1,0 +1,78 @@
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.chuckHider {
+  position: absolute;
+  background-color: red;
+  width: 100%;
+  height: 50vh;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.loaderLine {
+  width: 15rem;
+  height: 0.5rem;
+  background-color: #000;
+  border-radius: 2rem;
+  animation: lineAnimation 0.5s;
+  z-index: 2;
+}
+
+.chuckLoader {
+  position: absolute;
+  background-image: url("../../assets/chuck.png");
+  background-size: contain;
+  background-size: 100% 100%;
+  width: 8rem;
+  height: 10rem;
+  margin-top: -10rem;
+  animation: chuckAnimation 1s;
+  z-index: 0;
+}
+
+.loaderContentWrapper {
+  width: 100%;
+  height: 100%;
+  animation: fadeOut 1s;
+  animation-delay: 2s;
+}
+
+@keyframes lineAnimation {
+  0% {
+    width: 0rem;
+  }
+  70% {
+    width: 0rem;
+  }
+  100% {
+    width: 15rem;
+  }
+}
+
+@keyframes chuckAnimation {
+  0% {
+    margin-top: 0;
+    display: none;
+  }
+  50% {
+    margin-top: 0;
+    display: block;
+  }
+  100% {
+    margin-top: -10rem;
+  }
+}
+
+@keyframes fadeOut {
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
