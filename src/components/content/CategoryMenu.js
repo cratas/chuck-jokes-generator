@@ -1,7 +1,7 @@
 import React from "react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 
-const getItems = () =>
+const getItems = () => 
   Array(10)
     .fill(0)
     .map((_, ind) => ({ id: `element-${ind}` }));

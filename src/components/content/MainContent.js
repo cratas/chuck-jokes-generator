@@ -1,29 +1,21 @@
-import React, { useEffect } from "react";
-import {  Box } from "@mui/system";
-import CategoryMenu from "./CategoryMenu";
+import { React, useEffect } from "react";
+import { Box } from "@mui/system";
 import { useDispatch, useSelector } from "react-redux";
-import { getCategories } from "../../utils/getCategories";
 import { setCategories } from "../../store/categoriesSlice";
 
 export const MainContent = (props) => {
-  const categories = useSelector((state) => state.categoriesReducer.category);
+  const categories = useSelector((state) => state.categories.categories);
   const dispatch = useDispatch();
 
-
   useEffect(() => {
-    getCategories()
-      .then((res) => {
-        console.log(res.data)
-        dispatch(setCategories(res.data));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    dispatch(setCategories());
   }, []);
 
+  // console.log(user);
+
   const handleClick = () => {
-    console.log(categories);
-  }
+    console.log(categories[0]);
+  };
 
   return (
     <Box
