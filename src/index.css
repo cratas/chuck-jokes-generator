@@ -3,7 +3,7 @@
 body {
   --color-white: #feefdd;
   --color-brown: #e27802;
-  --color-black: #201E1F;
+  --color-black: #000;
   --color-black-light: rgba(231, 210, 210, 0.781);
 
 
@@ -19,3 +19,9 @@ h1 {
   font-size: 5rem;
   margin: 0;
 }
+
+h2 {
+  font-size: 2.3rem;
+  margin: 0;
+}
+

@@ -3,14 +3,13 @@ import createSagaMiddleware from "redux-saga";
 import { watcherSaga } from "./sagas/rootSaga";
 import userReducer from "./userSlice";
 import categoriesReducer from "./categoriesSlice";
-
 // creating saga middleware
 const sagaMiddleware = createSagaMiddleware();
 
 // combining all reducers into one object
 const reducer = combineReducers({
   categories: categoriesReducer,
-  userReducer,
+  user: userReducer,
 });
 
 // creating redux store and add saga middleware into array of middlewares

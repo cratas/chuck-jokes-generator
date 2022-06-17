@@ -7,7 +7,9 @@ export function* handleGetCategories(action) {
     // const { payload } = action; // u can destructure payoload
     const response = yield call(requestGetCategories);
     const { data } = response;
-    yield put(setCategories({ ...data }));
+    const formatedData = Object.values(data);
+
+    yield put(setCategories(formatedData));
   } catch (err) {
     console.log(err);
   }

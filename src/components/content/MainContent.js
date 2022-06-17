@@ -1,21 +1,17 @@
 import { React, useEffect } from "react";
 import { Box } from "@mui/system";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setCategories } from "../../store/categoriesSlice";
+import { CategoriesMenu } from "./CategoriesMenu";
+import _ from "underscore";
+import { DisplayJoke } from "./DisplayJoke";
 
 export const MainContent = (props) => {
-  const categories = useSelector((state) => state.categories.categories);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(setCategories());
   }, []);
-
-  // console.log(user);
-
-  const handleClick = () => {
-    console.log(categories[0]);
-  };
 
   return (
     <Box
@@ -24,11 +20,13 @@ export const MainContent = (props) => {
       borderRadius={10}
       backgroundColor="#FEEFDD"
       border="3px solid black"
+      display="flex"
+      flexDirection="column"
+      justifyContent="space-between"
     >
-      <button onClick={handleClick}>Get categories</button>
-      {/* {categories.map((c) => <li>c</li>)} */}
-      {/* {props.randomJoke} */}
-      {/* <CategoryMenu /> */}
+      <CategoriesMenu />
+      <DisplayJoke />
+
     </Box>
   );
 };
