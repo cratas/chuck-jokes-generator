@@ -1,32 +1,37 @@
 import { React, useEffect, useState } from "react";
-import axios from "axios";
-import {  getRandomJokes } from "../../utils/getRandomJokes";
+import { getRandomJoke } from "../../utils/getRandomJoke";
+import { Container, Box } from "@mui/system";
+import Header from "./Header";
+import { MainContent } from "./MainContent";
 
 const Content = () => {
   const [data, setData] = useState();
 
-  //   const getData = () => {
-  //     axios
-  //       .get(`https://api.chucknorris.io/jokes/random`)
-  //       .then((res) => {
-  //         const data = res.data;
-  //         // setData({ data });
-  //         console.log(data.value)
-  //       })
-  //       .catch((err) => {
-  //         setData("kamil");
-  //       });
-  //   };
-
   useEffect(() => {
-    getRandomJokes().then((res) => {
-        console.log(res.data)
-    }).catch(() => {
+    getRandomJoke()
+      .then((res) => {
+        // console.log(res.data)
+        setData(res.data.value);
+      })
+      .catch(() => {
         console.log("bad");
-    })
+      });
   }, []);
 
-  return <div></div>;
+  return (
+    <Container>
+      <Box
+        display="flex"
+        alignItems="flex-start"
+        justifyContent={"center"}
+        height="100vh"
+        flexDirection={"column"}
+      >
+        <Header /> 
+        <MainContent />
+      </Box>
+    </Container>
+  );
 };
 
 export default Content;

@@ -13,7 +13,7 @@ const App = () => {
     // set isLoaded state after 3s
     const timer = setTimeout(() => {
       setIsLoaded(true);
-    }, 3000);
+    }, 2800);
 
     return () => {
       clearTimeout(timer);

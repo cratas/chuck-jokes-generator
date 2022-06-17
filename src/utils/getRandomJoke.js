@@ -1,6 +1,6 @@
 import axiosClient from "./axiosClient";
 
-export const getRandomJokes = () => {
+export const getRandomJoke = () => {
   return axiosClient.get("/random");
 };
 

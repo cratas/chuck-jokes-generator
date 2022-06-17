@@ -1,0 +1,8 @@
+.imageWrapper {
+    display: flex;
+    margin-left: 5rem;
+}
+
+.imageWrapper img {
+    width: 7em;
+}
