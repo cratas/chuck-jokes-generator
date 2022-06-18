@@ -1,5 +1,5 @@
 import { call, put } from "redux-saga/effects";
-import { setCategories, setCurrentCategory } from "../categoriesSlice";
+import { setCategories } from "../categoriesSlice";
 import { requestGetCategories } from "../requests/categories";
 
 export function* handleGetCategories(action) {

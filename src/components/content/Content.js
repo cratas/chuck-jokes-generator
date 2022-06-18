@@ -1,22 +1,9 @@
-import { React, useEffect, useState } from "react";
+import { React } from "react";
 import { Container, Box } from "@mui/system";
 import Header from "./Header";
 import { MainContent } from "./MainContent";
 
 const Content = () => {
-  // const [data, setData] = useState();
-
-  // useEffect(() => {
-  //   getRandomJoke()
-  //     .then((res) => {
-  //       // console.log(res.data)
-  //       setData(res.data.value);
-  //     })
-  //     .catch(() => {
-  //       console.log("bad");
-  //     });
-  // }, []);
-
   return (
     <Container>
       <Box

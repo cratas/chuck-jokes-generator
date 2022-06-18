@@ -1,12 +1,49 @@
-import { React, useEffect } from "react";
+import { React, useEffect, useState } from "react";
 import { Box } from "@mui/system";
-import { setCategories } from "../../store/categoriesSlice";
-import { CategoriesMenu } from "./CategoriesMenu";
-import _ from "underscore";
 import { DisplayJoke } from "./DisplayJoke";
 import { CategorySelect } from "./CategorySelect";
+import { Actions } from "./Actions";
+import { getRandomJoke } from "./../../utils/getRandomJoke";
+import { getRandomJokeByCategory } from "./../../utils/getRandomJokeByCategory";
+import { useSelector } from "react-redux";
+import _ from "underscore";
 
 export const MainContent = (props) => {
+  const [joke, setJoke] = useState(); // state for keeping actual joke
+  const currentCategory = useSelector(
+    (state) => state.currentCategory.currentCategory,
+    _.isEqual
+  );
+
+  const setRandomJoke = () => {
+    getRandomJoke()
+      .then((res) => {
+        setJoke(res.data.value);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const setRandomJokeByCategory = (category) => {
+    getRandomJokeByCategory(category)
+      .then((res) => {
+        setJoke(res.data.value);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  // displaying new joke on render component
+  useEffect(() => {
+    setRandomJoke();
+  }, []);
+
+  const handleClick = () => {
+    setRandomJoke();
+  };
+
+  const handleClickTwo = () => {
+    console.log(currentCategory);
+    setRandomJokeByCategory(currentCategory);
+  };
 
   return (
     <Box
@@ -19,13 +56,15 @@ export const MainContent = (props) => {
       flexDirection="column"
       justifyContent="space-between"
     >
-      <Box >
-        <CategorySelect />
+      <Box>
         <CategorySelect />
       </Box>
+      <button onClick={handleClick}>click</button>
+      <button onClick={handleClickTwo}>category joke</button>
 
-      <CategoriesMenu />
-      <DisplayJoke />
+      {/* <CategoriesMenu /> */}
+      <Actions />
+      <DisplayJoke newJoke={joke} />
     </Box>
   );
 };
