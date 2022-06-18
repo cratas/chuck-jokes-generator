@@ -6,3 +6,16 @@
 .imageWrapper img {
     width: 7em;
 }
+
+.contentWrapper {
+    animation: scale-up 0.5s;
+}
+
+@keyframes scale-up {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

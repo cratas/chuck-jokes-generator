@@ -41,7 +41,6 @@ export const MainContent = (props) => {
   };
 
   const handleClickTwo = () => {
-    console.log(currentCategory);
     setRandomJokeByCategory(currentCategory);
   };
 

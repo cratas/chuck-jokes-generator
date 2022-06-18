@@ -3,30 +3,29 @@ import { CustomSelect, StyledOption } from "./CategorySelectStyles";
 import { useDispatch, useSelector } from "react-redux";
 import _ from "underscore";
 import { setCurrentCategory } from "../../store/currentCategorySlice";
+import { setCategories } from "../../store/categoriesSlice";
 
 export const CategorySelect = () => {
   const categories = useSelector(
     (state) => state.categories.categories,
     _.isEqual
   );
-  const currentCategory = useSelector(
-    (state) => state.currentCategory.currentCategory
-  );
+  // const currentCategory = useSelector(
+  //   (state) => state.currentCategory.currentCategory
+  // );
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setCurrentCategory(categories[0]));
+    dispatch(setCategories());
+    dispatch(setCurrentCategory("animal"));
   }, []);
 
   const handleChange = (event) => {
     dispatch(setCurrentCategory(event));
   };
 
-  console.log(categories);
-  console.log(currentCategory);
-
   return (
-    <CustomSelect defaultValue={currentCategory} onChange={handleChange}>
+    <CustomSelect defaultValue={"animal"} onChange={handleChange}>
       {categories?.map((category) => (
         <StyledOption value={category}>{category}</StyledOption>
       ))}

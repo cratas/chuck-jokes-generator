@@ -2,10 +2,11 @@ import { React } from "react";
 import { Container, Box } from "@mui/system";
 import Header from "./Header";
 import { MainContent } from "./MainContent";
+import customClasses from "./Content.module.css";
 
 const Content = () => {
   return (
-    <Container>
+    <Container className={customClasses.contentWrapper}>
       <Box
         display="flex"
         alignItems="flex-start"
@@ -13,7 +14,7 @@ const Content = () => {
         height="100vh"
         flexDirection={"column"}
       >
-        <Header /> 
+        <Header />
         <MainContent />
       </Box>
     </Container>
