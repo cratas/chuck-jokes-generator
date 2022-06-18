@@ -1,10 +1,13 @@
 import React from "react";
+import MyButton from "./MyButton"
 
-export const Actions = () => {
+export const Actions = (props) => {
   return (
     <div>
-      <button>Get random joke</button>
-      <button>Get random by category</button>
+      <MyButton onClick={props.setRandomJokeHandler} text="Get random joke" />
+      <MyButton onClick={props.setRandomJokeByCategoryHandler} text="Get random joke by category" />
+
+
     </div>
   );
 };

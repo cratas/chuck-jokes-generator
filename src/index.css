@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 
 body {
-  --color-white: #FFF8E8;
+  --color-white: #fff8e8;
   --color-brown: #e27802;
   --color-black: #000;
-  --color-black-light: rgba(231, 210, 210, 0.781);
-
+  --color-black-light: #e2790241;
 
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -25,3 +24,20 @@ h2 {
   margin: 0;
 }
 
+@media screen and (max-width: 1200px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}

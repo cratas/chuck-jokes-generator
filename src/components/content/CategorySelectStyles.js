@@ -37,17 +37,16 @@ const StyledButton = styled("button")(
   min-height: calc(1.5em + 22px);
   min-width: 320px;
   background: ${theme.palette.mode === "dark" ? grey[900] : "#fff"};
-  border: 1px solid ${theme.palette.mode === "dark" ? grey[800] : grey[300]};
+  border: 3px solid black;
   border-radius: 0.75em;
-  margin: 0.5em;
+  margin: 1vw 0;
   padding: 10px;
   text-align: left;
   line-height: 1.5;
   color: ${theme.palette.mode === "dark" ? grey[300] : grey[900]};
 
   &:hover {
-    background: ${theme.palette.mode === "dark" ? "" : grey[100]};
-    border-color: ${theme.palette.mode === "dark" ? grey[700] : grey[400]};
+    background: var(--color-black-light);;
     cursor: pointer;
   }
 
@@ -78,7 +77,6 @@ const StyledListbox = styled("ul")(
   min-width: 320px;
   background: ${theme.palette.mode === "dark" ? grey[900] : "#fff"};
   border: 1px solid ${theme.palette.mode === "dark" ? grey[800] : grey[300]};
-  border-radius: 0.75em;
   color: ${theme.palette.mode === "dark" ? grey[300] : grey[900]};
   overflow: auto;
   outline: 0px;
@@ -107,8 +105,11 @@ export const StyledOption = styled(OptionUnstyled)(
   }
 
   &.${optionUnstyledClasses.highlighted}.${optionUnstyledClasses.selected} {
-    background-color: ${theme.palette.mode === "dark" ? blue[900] : blue[100]};
-    color: ${theme.palette.mode === "dark" ? blue[100] : blue[900]};
+    // background-color: ${
+      theme.palette.mode === "dark" ? blue[900] : blue[100]
+    };
+background-color: var(--color-black-light);
+    color: black;
   }
 
   &.${optionUnstyledClasses.disabled} {

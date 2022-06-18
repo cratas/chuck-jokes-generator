@@ -10,24 +10,23 @@ export const CategorySelect = () => {
     (state) => state.categories.categories,
     _.isEqual
   );
-  // const currentCategory = useSelector(
-  //   (state) => state.currentCategory.currentCategory
-  // );
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(setCategories());
-    dispatch(setCurrentCategory("animal"));
   }, []);
+
+  // console.log(currentCategory);
 
   const handleChange = (event) => {
     dispatch(setCurrentCategory(event));
   };
 
   return (
-    <CustomSelect defaultValue={"animal"} onChange={handleChange}>
+    <CustomSelect defaultValue={"animal"} onChange={handleChange} >
       {categories?.map((category) => (
-        <StyledOption value={category}>{category}</StyledOption>
+        <StyledOption value={category} key={category}>{category}</StyledOption>
       ))}
     </CustomSelect>
   );
