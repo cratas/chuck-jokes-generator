@@ -16,7 +16,7 @@ export const DisplayJoke = () => {
   }, []);
 
   return (
-    <Box p={5} textAlign="center">
+    <Box p={3} textAlign="center">
       <h2>„ {randomJoke} “</h2>
     </Box>
   );

@@ -17,7 +17,7 @@ export const categoriesSlice = createSlice({
     },
     setCurrentCategory: (state, action) => {
       return {
-        category: action.payload.category,
+        category: "kamil",
       };
     },
   },
