@@ -14,7 +14,7 @@ const CustomButton = styled(ButtonUnstyled)`
   transition: all 150ms ease;
   cursor: pointer;
   border: 3px solid black;
-  // margin: 1rem;
+  // margin-top: 1rem;
 
   &:hover {
     background-color: var(--color-black-light);
@@ -33,7 +33,7 @@ const CustomButton = styled(ButtonUnstyled)`
 
 export default function MyButton(props) {
   return (
-    <Stack spacing={2} direction="row" onClick={props.onClick} text={props.text} >
+    <Stack spacing={2} direction="row" onClick={props.onClick} text={props.text} style={{marginTop: props.marginTop}}>
       <CustomButton disabled={props.disabled}>{props.text}</CustomButton>
     </Stack>
   );

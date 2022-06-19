@@ -53,21 +53,20 @@ export const JokeFinder = (props) => {
           onChange={onChangeHandle}
         />
       </Box>
-      {isShownInfoText ? (
+      {isShownInfoText && (
         <div style={{ color: "var(--color-grey)" }}>
           <span style={{ fontSize: "1.3rem", color: "black" }}>
             {countOfFoundJokes}
           </span>{" "}
           jokes was found.
         </div>
-      ) : (
-        <div style={{ color: "var(--color-white)" }}>c</div>
-      )}
-      <Box display="flex" justifyContent="center">
+      ) }
+      <Box display="flex" justifyContent="center" >
         <MyButton
           onClick={handleClick}
           text="Get joke"
           disabled={countOfFoundJokes === 0}
+          marginTop={"1vw"}
         />
       </Box>
     </>
