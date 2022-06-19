@@ -3,10 +3,6 @@ import ButtonUnstyled, { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled'
 import { styled } from '@mui/system';
 import Stack from '@mui/material/Stack';
 
-const blue = {
-  700: '#0059B2',
-};
-
 const CustomButton = styled(ButtonUnstyled)`
   font-family: var(--font-family);
   font-weight: bold;
@@ -37,8 +33,8 @@ const CustomButton = styled(ButtonUnstyled)`
 
 export default function MyButton(props) {
   return (
-    <Stack spacing={2} direction="row" onClick={props.onClick} text={props.text}>
-      <CustomButton >{props.text}</CustomButton>
+    <Stack spacing={2} direction="row" onClick={props.onClick} text={props.text} >
+      <CustomButton disabled={props.disabled}>{props.text}</CustomButton>
     </Stack>
   );
 }

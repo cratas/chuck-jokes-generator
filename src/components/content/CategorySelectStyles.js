@@ -32,7 +32,7 @@ const grey = {
 const StyledButton = styled("button")(
   ({ theme }) => `
   font-family: var(--font-family)
-  font-size: 0.875rem;
+  font-size: 1rem!important;
   box-sizing: border-box;
   min-height: calc(1.5em + 22px);
   min-width: 320px;
@@ -40,7 +40,7 @@ const StyledButton = styled("button")(
   border: 3px solid black;
   border-radius: 0.75em;
   margin: 1vw 0;
-  padding: 10px;
+  padding: 12px;
   text-align: left;
   line-height: 1.5;
   color: ${theme.palette.mode === "dark" ? grey[300] : grey[900]};
@@ -69,8 +69,8 @@ const StyledButton = styled("button")(
 
 const StyledListbox = styled("ul")(
   ({ theme }) => `
-  font-family: var(--font-family);
   font-size: 0.875rem;
+  font-family: var(--font-family);
   box-sizing: border-box;
   padding: 5px;
   margin: 10px 0;

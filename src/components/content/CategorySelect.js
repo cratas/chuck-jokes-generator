@@ -6,10 +6,7 @@ import { setCurrentCategory } from "../../store/currentCategorySlice";
 import { setCategories } from "../../store/categoriesSlice";
 
 export const CategorySelect = () => {
-  const categories = useSelector(
-    (state) => state.categories.categories,
-    _.isEqual
-  );
+  const { categories } = useSelector((state) => state.categories, _.isEqual);
 
   const dispatch = useDispatch();
 
@@ -24,9 +21,11 @@ export const CategorySelect = () => {
   };
 
   return (
-    <CustomSelect defaultValue={"animal"} onChange={handleChange} >
+    <CustomSelect defaultValue={"animal"} onChange={handleChange}>
       {categories?.map((category) => (
-        <StyledOption value={category} key={category}>{category}</StyledOption>
+        <StyledOption value={category} key={category}>
+          {category}
+        </StyledOption>
       ))}
     </CustomSelect>
   );

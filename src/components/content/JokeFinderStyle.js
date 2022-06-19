@@ -2,7 +2,6 @@ import * as React from "react";
 import InputUnstyled from "@mui/base/InputUnstyled";
 import { styled } from "@mui/system";
 
-
 const grey = {
   900: "#1A2027",
 };
@@ -19,7 +18,9 @@ const StyledInputElement = styled("input")(
   border-radius: 8px;
   padding: 12px 0 12px 12px;
   margin: 1vw 0;
-  width: 100%;
+  margin-bottom: 0.3rem;
+  width: 102%;
+  box-sizing: border-box;
 
   &:hover {
     background: var(--color-black-light);
@@ -29,6 +30,12 @@ const StyledInputElement = styled("input")(
   &:focus {
     background-color: var(--color-black-light)
   }
+
+  @media (max-width: 1800px) {
+    box-sizing: border-box;
+    width: 101%;
+
+ }
 `
 );
 
@@ -38,12 +45,17 @@ const CustomInput = React.forwardRef(function CustomInput(props, ref) {
       components={{ Input: StyledInputElement }}
       {...props}
       ref={ref}
+      onChange={props.onChange}
     />
   );
 });
 
-export default function UnstyledInputBasic() {
+export default function UnstyledInputBasic(props) {
   return (
-    <CustomInput aria-label="Demo input" placeholder="Find some joke ..." />
+    <CustomInput
+      aria-label="Demo input"
+      placeholder="Find some joke ..."
+      onChange={props.onChange}
+    />
   );
 }

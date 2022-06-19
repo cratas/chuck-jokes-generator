@@ -5,6 +5,7 @@ body {
   --color-brown: #e27802;
   --color-black: #000;
   --color-black-light: #e2790241;
+  --color-grey: rgb(107, 107, 107);
 
   margin: 0;
   -webkit-font-smoothing: antialiased;

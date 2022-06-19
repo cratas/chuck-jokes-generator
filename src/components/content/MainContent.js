@@ -2,18 +2,18 @@ import { React, useEffect, useState } from "react";
 import { Box } from "@mui/system";
 import { DisplayJoke } from "./DisplayJoke";
 import { CategorySelect } from "./CategorySelect";
-import { Actions } from "./Actions";
 import { getRandomJoke } from "./../../utils/getRandomJoke";
 import { getRandomJokeByCategory } from "./../../utils/getRandomJokeByCategory";
 import { useSelector } from "react-redux";
 import _ from "underscore";
 import MyButton from "./MyButton";
 import { JokeFinder } from "./JokeFinder";
+import { BoxWrapper } from "./BoxWrapper";
 
 export const MainContent = (props) => {
   const [joke, setJoke] = useState(); // state for keeping actual joke
-  const currentCategory = useSelector(
-    (state) => state.currentCategory.currentCategory,
+  const { currentCategory } = useSelector(
+    (state) => state.currentCategory,
     _.isEqual
   );
 
@@ -47,7 +47,6 @@ export const MainContent = (props) => {
       border="3px solid black"
       display="flex"
       flexDirection="column"
-      // justifyContent="space-between"
     >
       <BoxWrapper title="Generate joke by category">
         <CategorySelect />
@@ -59,8 +58,8 @@ export const MainContent = (props) => {
         </Box>
       </BoxWrapper>
 
-      <BoxWrapper isBordered={true} title="Find joke by your text">
-        <JokeFinder />
+      <BoxWrapper isBordered={true} title="Find joke by text">
+        <JokeFinder setJokeHandler={setJoke} />
       </BoxWrapper>
 
       <BoxWrapper isBordered={true} title="Get totally random joke">
@@ -70,20 +69,6 @@ export const MainContent = (props) => {
       </BoxWrapper>
 
       <DisplayJoke newJoke={joke} />
-    </Box>
-  );
-};
-
-export const BoxWrapper = (props) => {
-  return (
-    <Box
-      m="1vw"
-      borderTop={props.isBordered && "1px solid black"}
-      display="flex"
-      flexDirection="column"
-    >
-      <div style={{ marginTop: "0.5rem" }}>{props.title}</div>
-      {props.children}
     </Box>
   );
 };
