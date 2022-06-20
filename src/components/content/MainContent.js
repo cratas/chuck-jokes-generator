@@ -61,7 +61,7 @@ export const MainContent = (props) => {
       </BoxWrapper>
 
       <BoxWrapper isBordered={true} title="Find joke by text">
-        <JokeFinder setJokeHandler={setJoke} />
+        <JokeFinder setJokeHandler={setJoke} alt="kamil"/>
       </BoxWrapper>
 
       <BoxWrapper isBordered={true} title="Get totally random joke">

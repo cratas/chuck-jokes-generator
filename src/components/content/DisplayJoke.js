@@ -25,7 +25,7 @@ export const DisplayJoke = (props) => {
       justifyContent="center"
       alignItems="center"
     >
-      <h2 style={{ fontSize: customFontSize }}>{props.newJoke}</h2>
+      <h2 style={{ fontSize: customFontSize }} id="displayJoke">{props.newJoke}</h2>
     </Box>
   );
 };
