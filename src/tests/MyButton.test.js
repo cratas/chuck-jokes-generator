@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import MyButton from "./components/UI/MyButton"
-import Header from "./components/Content/Header"
+import MyButton from "../components/UI/MyButton"
 
 
 test('button text does not change on click', () => {
@@ -17,12 +16,4 @@ test('button text does not change on click', () => {
   expect(button).toBeInTheDocument()
 })
 
-
-test('img was loaded correctly', () => {
-  // Arrange
-  render(<Header />);
-
-   // Assert
-  expect(screen.getByRole("img")).toBeInTheDocument();
-})
 

@@ -76,10 +76,11 @@ const StyledListbox = styled("ul")(
   margin: 10px 0;
   min-width: 320px;
   background: ${theme.palette.mode === "dark" ? grey[900] : "#fff"};
-  border: 1px solid ${theme.palette.mode === "dark" ? grey[800] : grey[300]};
+  border: 2px solid black;
   color: ${theme.palette.mode === "dark" ? grey[300] : grey[900]};
   overflow: auto;
   outline: 0px;
+  border-radius: 10px;
   `
 );
 
