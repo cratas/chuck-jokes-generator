@@ -10,11 +10,11 @@ const Content = () => {
       <Box
         display="flex"
         alignItems="flex-start"
-        justifyContent={"center"}
+        justifyContent="center"
         height="100vh"
-        flexDirection={"column"}
+        flexDirection="column"
       >
-        <Header />
+        <Header title="Chuck out some jokes"/>
         <MainContent />
       </Box>
     </Container>

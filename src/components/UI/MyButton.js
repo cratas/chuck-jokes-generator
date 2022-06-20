@@ -1,7 +1,9 @@
-import * as React from 'react';
-import ButtonUnstyled, { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
-import { styled } from '@mui/system';
-import Stack from '@mui/material/Stack';
+import * as React from "react";
+import ButtonUnstyled, {
+  buttonUnstyledClasses,
+} from "@mui/base/ButtonUnstyled";
+import { styled } from "@mui/system";
+import Stack from "@mui/material/Stack";
 
 const CustomButton = styled(ButtonUnstyled)`
   font-family: var(--font-family);
@@ -14,14 +16,14 @@ const CustomButton = styled(ButtonUnstyled)`
   transition: all 150ms ease;
   cursor: pointer;
   border: 3px solid black;
-  // margin-top: 1rem;
 
   &:hover {
     background-color: var(--color-black-light);
   }
 
   &.${buttonUnstyledClasses.focusVisible} {
-    box-shadow: 0 4px 20px 0 rgba(61, 71, 82, 0.1), 0 0 0 5px rgba(0, 127, 255, 0.5);
+    box-shadow: 0 4px 20px 0 rgba(61, 71, 82, 0.1),
+      0 0 0 5px rgba(0, 127, 255, 0.5);
     outline: none;
   }
 
@@ -33,7 +35,13 @@ const CustomButton = styled(ButtonUnstyled)`
 
 export default function MyButton(props) {
   return (
-    <Stack spacing={2} direction="row" onClick={props.onClick} text={props.text} style={{marginTop: props.marginTop}}>
+    <Stack
+      spacing={2}
+      direction="row"
+      onClick={props.onClick}
+      text={props.text}
+      style={{ marginTop: props.marginTop }}
+    >
       <CustomButton disabled={props.disabled}>{props.text}</CustomButton>
     </Stack>
   );

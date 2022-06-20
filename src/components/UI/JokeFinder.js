@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Box from "@mui/material/Box";
-import { getJokeByQuery } from "./../../utils/getJokeByQuery";
-import UnstyledInputBasic from "./JokeFinderStyle";
+import { getJokeByQuery } from "../../utils/getJokeByQuery";
+import UnstyledInputBasic from "../customStyles/JokeFinderStyle";
 import MyButton from "./MyButton";
 import { getRandomJokeFromResponse } from "../../utils/getRandomJokeFromResponse";
 
@@ -46,7 +46,7 @@ export const JokeFinder = (props) => {
 
   return (
     <>
-      <Box paddingRight={"1vw"}>
+      <Box paddingRight="1vw">
         <UnstyledInputBasic
           label="Joke"
           value={inputText}
@@ -66,7 +66,7 @@ export const JokeFinder = (props) => {
           onClick={handleClick}
           text="Get joke"
           disabled={countOfFoundJokes === 0}
-          marginTop={isShownInfoText ? "3px" : "1vw"}
+          marginTop={isShownInfoText ? "5px" : "1vw"}
         />
       </Box>
     </>

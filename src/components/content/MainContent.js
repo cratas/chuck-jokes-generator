@@ -1,14 +1,14 @@
 import { React, useEffect, useState } from "react";
 import { Box } from "@mui/system";
 import { DisplayJoke } from "./DisplayJoke";
-import { CategorySelect } from "./CategorySelect";
+import { CategorySelect } from "../UI/CategorySelect";
 import { getRandomJoke } from "./../../utils/getRandomJoke";
 import { getRandomJokeByCategory } from "./../../utils/getRandomJokeByCategory";
 import { useSelector } from "react-redux";
+import MyButton from "../UI/MyButton";
+import { JokeFinder } from "../UI/JokeFinder";
+import { BoxWrapper } from "../UI/BoxWrapper";
 import _ from "underscore";
-import MyButton from "./MyButton";
-import { JokeFinder } from "./JokeFinder";
-import { BoxWrapper } from "./BoxWrapper";
 
 export const MainContent = (props) => {
   const [joke, setJoke] = useState(); // state for keeping actual joke
@@ -17,6 +17,7 @@ export const MainContent = (props) => {
     _.isEqual
   );
 
+  // function gets totally random joke from API
   const setRandomJoke = () => {
     getRandomJoke()
       .then((res) => {
@@ -25,6 +26,7 @@ export const MainContent = (props) => {
       .catch((err) => console.log(err));
   };
 
+  // function gets random joke from api by given category
   const setRandomJokeByCategory = () => {
     getRandomJokeByCategory(currentCategory)
       .then((res) => {
@@ -48,7 +50,7 @@ export const MainContent = (props) => {
       display="flex"
       flexDirection="column"
     >
-      <BoxWrapper title="Generate joke by category">
+      <BoxWrapper title="Generate random joke in given category" cutMargin={true}>
         <CategorySelect />
         <Box display="flex" justifyContent="center">
           <MyButton

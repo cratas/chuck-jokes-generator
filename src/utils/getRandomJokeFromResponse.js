@@ -1,3 +1,4 @@
+// function for generating random joke from response
 export const getRandomJokeFromResponse = (response) => {
   const countOfJokes = response.data.total; // count of returned jokes
   const randomIndex = Math.floor(Math.random() * countOfJokes); // generating random index of joke

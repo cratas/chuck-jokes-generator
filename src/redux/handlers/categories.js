@@ -1,10 +1,11 @@
 import { call, put } from "redux-saga/effects";
-import { setCategories } from "../categoriesSlice";
+import { setCategories } from "../store/reducers/categoriesSlice";
 import { requestGetCategories } from "../requests/categories";
 
+
+// redux saga handler
 export function* handleGetCategories(action) {
   try {
-    // const { payload } = action; // u can destructure payoload
     const response = yield call(requestGetCategories);
     const { data } = response;
     const formatedData = Object.values(data);

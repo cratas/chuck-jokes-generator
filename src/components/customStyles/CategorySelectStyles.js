@@ -105,9 +105,7 @@ export const StyledOption = styled(OptionUnstyled)(
   }
 
   &.${optionUnstyledClasses.highlighted}.${optionUnstyledClasses.selected} {
-    // background-color: ${
-      theme.palette.mode === "dark" ? blue[900] : blue[100]
-    };
+    background-color: ${theme.palette.mode === "dark" ? blue[900] : blue[100]};
 background-color: var(--color-black-light);
     color: black;
   }

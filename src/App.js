@@ -2,7 +2,6 @@ import "./App.css";
 import { Loader } from "./components/loader/Loader";
 import { useEffect, useState } from "react";
 import Content from "./components/content/Content";
-import _ from "underscore";
 
 const App = () => {
   const [isLoaded, setIsLoaded] = useState(false);

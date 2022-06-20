@@ -9,7 +9,11 @@ export const BoxWrapper = (props) => {
       display="flex"
       flexDirection="column"
     >
-      <div style={{ marginTop: "0.5rem" }}>{props.title}</div>
+      <div
+        style={props.cutMargin ? { marginTop: "0" } : { marginTop: "0.5rem" }}
+      >
+        {props.title}
+      </div>
       {props.children}
     </Box>
   );
