@@ -60,13 +60,13 @@ export const JokeFinder = (props) => {
           </span>{" "}
           jokes was found.
         </div>
-      ) }
-      <Box display="flex" justifyContent="center" >
+      )}
+      <Box display="flex" justifyContent="center">
         <MyButton
           onClick={handleClick}
           text="Get joke"
           disabled={countOfFoundJokes === 0}
-          marginTop={"1vw"}
+          marginTop={isShownInfoText ? "3px" : "1vw"}
         />
       </Box>
     </>

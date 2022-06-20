@@ -2,6 +2,16 @@ import { React } from "react";
 import { Box } from "@mui/system";
 
 export const DisplayJoke = (props) => {
+  let customFontSize = "2.3rem";
+
+  const text = props.newJoke !== undefined ? props.newJoke : "";
+
+  // fitting text inside div
+  if(text.length > 100) customFontSize="2.1rem";
+  if(text.length > 150) customFontSize="2rem";
+  if(text.length > 200) customFontSize="1.8rem";
+  if(text.length > 250) customFontSize="1.2rem";
+
   return (
     <Box
       p={3}
@@ -15,7 +25,7 @@ export const DisplayJoke = (props) => {
       justifyContent="center"
       alignItems="center"
     >
-      <h2>„ {props.newJoke} “</h2>
+      <h2 style={{fontSize: customFontSize}}>{props.newJoke}</h2>
     </Box>
   );
 };

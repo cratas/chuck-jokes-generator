@@ -34,7 +34,6 @@ const StyledInputElement = styled("input")(
   @media (max-width: 1800px) {
     box-sizing: border-box;
     width: 101%;
-
  }
 `
 );
