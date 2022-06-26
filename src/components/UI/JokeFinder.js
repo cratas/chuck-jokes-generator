@@ -44,6 +44,15 @@ export const JokeFinder = (props) => {
     }, 200);
   };
 
+  const infoText = (
+    <div style={{ color: "var(--color-grey)" }}>
+      <span style={{ fontSize: "1.3rem", color: "black" }}>
+        {countOfFoundJokes}
+      </span>{" "}
+      jokes was found.
+    </div>
+  );
+
   return (
     <>
       <Box paddingRight="1vw">
@@ -53,14 +62,10 @@ export const JokeFinder = (props) => {
           onChange={onChangeHandle}
         />
       </Box>
-      {isShownInfoText && (
-        <div style={{ color: "var(--color-grey)" }}>
-          <span style={{ fontSize: "1.3rem", color: "black" }}>
-            {countOfFoundJokes}
-          </span>{" "}
-          jokes was found.
-        </div>
-      )}
+
+      {/* Conditionally render info text */}
+      {isShownInfoText && infoText}
+
       <Box display="flex" justifyContent="center">
         <MyButton
           onClick={handleClick}

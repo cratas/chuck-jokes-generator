@@ -1,5 +1,8 @@
 import { useEffect } from "react";
-import { CustomSelect, StyledOption } from "../customStyles/CategorySelectStyles";
+import {
+  CustomSelect,
+  StyledOption,
+} from "../customStyles/CategorySelectStyles";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentCategory } from "../../redux/store/reducers/currentCategorySlice";
 import { setCategories } from "../../redux/store/reducers/categoriesSlice";
@@ -9,7 +12,7 @@ export const CategorySelect = () => {
   const { categories } = useSelector((state) => state.categories, _.isEqual);
   const dispatch = useDispatch();
 
-  // getting categories from API 
+  // getting categories from API
   useEffect(() => {
     dispatch(setCategories());
   }, [dispatch]);
