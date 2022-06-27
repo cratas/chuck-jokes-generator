@@ -2,7 +2,6 @@ import { call, put } from "redux-saga/effects";
 import { setCategories } from "../store/reducers/categoriesSlice";
 import { requestGetCategories } from "../requests/categories";
 
-
 // redux saga handler
 export function* handleGetCategories(action) {
   try {

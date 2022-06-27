@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import chuckHeaderImage from "../../assets/chuck-header.png";
 import customClasses from "./Content.module.css";
 
-const Header = (props) => {
+const Header = ({title}) => {
   return (
     <Box
       height="10vh"
@@ -12,7 +12,7 @@ const Header = (props) => {
       justifyContent="center"
       alignItems="flex-end"
     >
-      <h1>{props.title}</h1>
+      <h1>{title}</h1>
       <div className={customClasses.imageWrapper}>
         <img src={chuckHeaderImage} alt="chuck-header" />
       </div>

@@ -1,4 +1,4 @@
-import { configureStore, combineReducers, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
 import { watcherSaga } from "../sagas/rootSaga";
 import categoriesReducer from "./reducers/categoriesSlice";
@@ -16,7 +16,7 @@ const reducer = combineReducers({
 // creating redux store and add saga middleware into array of middlewares
 const store = configureStore({
   reducer,
-  middleware: [...getDefaultMiddleware({ thunk: false }), sagaMiddleware]
+  middleware: (getDefaultMiddleware) => [...getDefaultMiddleware({ thunk: false }), sagaMiddleware],
 });
 
 // start saga listener

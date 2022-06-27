@@ -16,7 +16,8 @@ const App = () => {
     };
   }, []);
 
-  return isLoaded ? <Content /> : <Loader />;
+  // return isLoaded ? <Content /> : <Loader />;
+  return <Content />
 };
 
 export default App;

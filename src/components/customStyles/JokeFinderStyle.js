@@ -55,6 +55,7 @@ export default function UnstyledInputBasic(props) {
       aria-label="Demo input"
       placeholder="Find some joke ..."
       onChange={props.onChange}
+      onKeyDown={props.onKeyDown}
     />
   );
 }

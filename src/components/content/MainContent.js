@@ -28,6 +28,9 @@ export const MainContent = (props) => {
 
   // function gets random joke from api by given category
   const setRandomJokeByCategory = () => {
+    if(currentCategory === "Set category") 
+      return;
+
     getRandomJokeByCategory(currentCategory)
       .then((res) => {
         setJoke(res.data.value);
@@ -56,6 +59,7 @@ export const MainContent = (props) => {
           <MyButton
             onClick={setRandomJokeByCategory}
             text="Get joke by category"
+            disabled={currentCategory === "Set category"}
           />
         </Box>
       </BoxWrapper>
@@ -74,3 +78,4 @@ export const MainContent = (props) => {
     </Box>
   );
 };
+

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  currentCategory: "animal",
+  currentCategory: "",
 };
 
 export const currentCategorySlice = createSlice({

@@ -19,13 +19,13 @@ export const CategorySelect = () => {
 
   // setting choosed category to redux store
   const handleChange = (event) => {
-    dispatch(setCurrentCategory(event));
+      dispatch(setCurrentCategory(event));
   };
 
   return (
-    <CustomSelect defaultValue="animal" onChange={handleChange}>
+    <CustomSelect defaultValue="Set category" onChange={handleChange}>
       {categories?.map((category) => (
-        <StyledOption value={category} key={category}>
+        <StyledOption value={category} key={category || "key"}>
           {category}
         </StyledOption>
       ))}

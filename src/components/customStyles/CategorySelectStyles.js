@@ -119,7 +119,6 @@ background-color: var(--color-black-light);
     background-color: ${theme.palette.mode === "dark" ? grey[800] : grey[100]};
     color: ${theme.palette.mode === "dark" ? grey[300] : grey[900]};
     cursor: pointer;
-
   }
   `
 );

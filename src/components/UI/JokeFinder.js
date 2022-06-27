@@ -30,7 +30,7 @@ export const JokeFinder = (props) => {
       return;
     }
 
-    // request is called after delay because of until the user stops typing
+    // request is called after delay because of waiting until the user stops typing
     setTimeout(() => {
       getJokeByQuery(event.target.value)
         .then((res) => {

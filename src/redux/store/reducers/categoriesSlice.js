@@ -10,7 +10,7 @@ export const categoriesSlice = createSlice({
   reducers: {
     setCategories: (state, action) => {
       return {
-        categories: action.payload,
+        categories: ['Set category'].concat(action.payload),
       };
     },
   },
