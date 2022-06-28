@@ -16,7 +16,7 @@ const reducer = combineReducers({
 // creating redux store and add saga middleware into array of middlewares
 const store = configureStore({
   reducer,
-  middleware: (getDefaultMiddleware) => [...getDefaultMiddleware({ thunk: false }), sagaMiddleware],
+  middleware: getDefaultMiddleware => [...getDefaultMiddleware({ thunk: false }), sagaMiddleware],
 });
 
 // start saga listener
